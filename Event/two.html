@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyncrous code</title>
+</head>
+<body>
+    <h2>chai aur code</h2>
+    <button>Stop</button>
+</body>
+<script>
+    // const sayHello=function (){
+    //     const chai=document.querySelector('h2')
+    //     chai.innerHTML="Shivam bewkof hai"
+    // }
+    // const refTimeout=setTimeout(sayHello,3000)
+    // const btn=document.querySelector('button');
+    // btn.addEventListener("click", function(){
+    //     clearTimeout(refTimeout)
+    //     console.log("stopped")
+    // })
+    
+    function sayHello(str){
+        console.log("this is the time",Date.now(),str)
+    }
+   const store= setInterval(sayHello,1000,"anuj")
+
+    document.querySelector('button').addEventListener("click", (e)=>{
+        clearInterval(store);
+        console.log(e.target)
+        e.target.style.backgroundColor="red"
+        console.log("stopped");
+    }
+    )
+
+</script>
+</html>
