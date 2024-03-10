@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLREQUEST </title>
+    <style>
+        #card{
+            border-width: 400px;
+            border: solid white;
+            padding: 44px;
+            margin: 100px;
+            
+        }
+        #email{
+            color: white;
+        }
+        #photo{
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body style="background-color: #414141;">
+    <h1>We are learning for the API</h1>
+    <div id="card">
+        <p id="photo"></p>
+        <p id="email"></p>
+    </div>
+</body>
+<script>
+    const id=document.getElementById('photo');
+    const id2=document.getElementById('email');
+   // console.log(id)
+    const urlRequest="https://api.github.com/users/mauryaanuj-11";
+    const xhr=new XMLHttpRequest();
+    xhr.open('GET', urlRequest);
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState===4){
+            const data=JSON.parse(this.responseText);
+            const imgData=data.avatar_url;
+            console.log(imgData);
+            id.innerHTML=`<img src="${imgData}" width="200px">`;
+            id2.innerHTML=`${data.name}`
+        }
+    }
+    xhr.send();
+</script>
+</html>
