@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind</title>
+</head>
+<body>
+    <button>Clicked Me</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.libaray="JavaScript";
+            this.server="https://port303/";
+            document
+                    .querySelector('button')
+                    .addEventListener("click", this.getMessage.bind(this).bind(this));
+        }
+        getMessage(){
+            console.log("Button Clicked");
+            console.log(this);
+            console.log(this.server);
+        }
+    }
+    const newLib=new React();
+</script>
+</html>
