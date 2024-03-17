@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="textArea" type="textarea">
+    <div id="show"></div>
+</body>
+<script>
+    const textArea=document.getElementById('textArea');
+    const showResult=document.getElementById('show');
+    textArea.addEventListener("keydown", (event)=>{
+        showResult.innerHTML=`You pressed the : ${event.key}`;
+    })
+</script>
+</html>
