@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the presentation of the cordinates of the mouse</h1>
+    <div id="show"></div>
+</body>
+<script>
+    const show=document.getElementById('show');
+    function funShow(event){
+        show.innerHTML=`Your clientX/y is : ${event.clientX} , ${event.clientY}
+                        Your clientX/y is : ${event.screenX} , ${event.screenY}`;
+    }
+    document.addEventListener("mouseover", funShow);
+</script>
+</html>
