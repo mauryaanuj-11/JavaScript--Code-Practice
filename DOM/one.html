@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #414141;
+            color: white;
+        }
+    </style>
+</head>
+<body >
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addElement(lang){
+        const li=document.createElement('li')
+        li.innerText=lang;
+        document.querySelector('.language').appendChild(li);
+    }
+    addElement("Python");
+    
+    function addOptiElement(lang){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(lang));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiElement("Django");
+    console.log(document.querySelector('.language'));
+
+    // ************* Edit 1 *****************
+    const secondLi=document.querySelector('li:nth-child(2)');
+    console.log(secondLi)
+    const li=document.createElement('li');
+    li.appendChild(document.createTextNode("Golang"));
+    secondLi.replaceWith(li);
+
+    // ************* Edit 2 *****************
+    const firstLi=document.querySelector('li:first-child');
+    console.log(firstLi)
+    firstLi.outerHTML="<li>TypeScript</li>";
+
+    // ************* Remove *****************
+    const remElement=document.querySelector("li:last-child")
+    console.log(remElement)
+    remElement.remove()
+
+
+
+</script>
+</html>
