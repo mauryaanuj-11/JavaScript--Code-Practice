@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change background-color</title>
+</head>
+<body>
+    <button>Tap to change color</button>
+</body>
+<script>
+    const btn=document.querySelector('button');
+    
+    function getColor(num){
+        return Math.floor(Math.random()*(num));
+    }
+
+    function handler1(e){
+        const clr=`rgb(${getColor(255)} ${getColor(255)} ${getColor(255)})`;
+        console.log(clr);
+        e.target.style.backgroundColor=clr
+        //document.body.style.backgroundColor=clr;
+    }
+    function handler2(){
+        const clr=`rgb(${getColor(255)} ${getColor(255)} ${getColor(255)})`;
+        console.log(clr);
+        document.body.style.backgroundColor=clr;
+    }
+    
+    btn.addEventListener( "click", handler1)
+   // btn.addEventListener( "keydown", handler2)
+
+</script>
+</html>
