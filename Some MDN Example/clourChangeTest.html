@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Tap here</button>
+</body>
+<Script>
+    const btn=document.querySelector('button');
+    
+    function change(e){
+        console.log(e)
+        e.target.style.backgroundColor=`rgb(${getColor(255)} ${getColor(255)} ${getColor(255)})`;
+    }
+
+    function getColor(num){
+        return Math.floor(Math.random()*(num));
+    }
+
+    btn.addEventListener('click', change)
+</Script>
+</html>
