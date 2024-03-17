@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colsure</title>
+    <style>
+        .set{
+            margin: 11px;
+            padding: 8px;
+            color: seagreen;
+        }
+    </style>
+</head>
+<body>
+    <button id="orange" class="set">Orange</button> <br/>
+    <button id="hotpink" class="set">Hotpink</button> <br/>
+    <button id="magenta" class="set">Magenta</button> <br/>
+    <button id="seagreen" class="set">Seagreen</button>
+</body>
+<script>
+    // document.querySelector('#orange').onclick=function(){
+    //     document.body.style.backgroundColor="orange";
+    // }
+    
+
+    // document.querySelector('#blue').onclick=function(){
+    //     document.body.style.backgroundColor="blue";
+    // }
+    
+    function getColor(colors){
+        return function(){
+            document.body.style.backgroundColor=`${colors}`;
+        }
+    }
+    document.querySelector('#orange').onclick=getColor("orange");
+    document.querySelector('#seagreen').onclick=getColor("seagreen");
+
+</script>
+</html>
